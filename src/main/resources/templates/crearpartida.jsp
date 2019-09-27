@@ -5,7 +5,6 @@
 </head>
 <body>
 	<header th:replace="layout/base::header('Crear partida')"></header>
-
 	<div class="wrapper">
 		<div class="container-fluid py-5">
 			<div class="row">
@@ -18,7 +17,7 @@
 									<h3 class="mb-0 my-2">Crear partidas</h3>
 								</div>
 								<div class="card-body">
-									<form class="form" th:action="@{/crear-partida}"
+									<form id="myform" class="form" th:action="@{/crear-partida}"
 										th:object="${partida}" role="form" autocomplete="off"
 										method="post">
 										<div class="form-group">
@@ -26,11 +25,28 @@
 												type="text" th:field="*{creador}" class="form-control"
 												id="inputCreador" name="creador" placeholder="Creador" readOnly>
 										</div>
+										<!--  
 										<div class="form-group">
 											<label for="inputDeporte">Deporte</label> <input
 												type="text" th:field="*{deporte}" name="deporte" class="form-control"
-												id="inputDeporte" placeholder="Deporte" required="">
+												id="inputDeporte" placeholder="Deporte" required>
 										</div>
+										-->
+										
+										<div class="form-group">
+										  <label for="inputDeporte">Deportes</label>
+										  <select class="form-control" id="inputDeporte" th:field="*{deporte}" name="deporte" placeholder="Deportes" required >
+										    <option th:value="futbol" th:text="Futbol"></option>
+										    <option th:value="Basquetball"th:text="Basketball"></option>
+										    <option th:value="Beisbol" th:text="Beisbol"></option>
+										    <option th:value="tenis" th:text="Tenis"></option>
+										  </select>
+										</div>
+										
+										
+										
+										
+										
 										<div class="form-group">
 											<label for="inputCiudad">Ciudad</label> <input type="text"
 												th:field="*{ciudad}" name="ciudad" class="form-control" id="inputCiudad"
@@ -48,20 +64,20 @@
 												title=""
 												required="">
 										</div>
-										<!--  div class="form-group">
+										<div class="form-group">
 											<label for="inputHComienzo">Hora de inicio</label> <input
-												type="time" th:field="*{horaComienzo}" name="horaComienzo" class="form-control"
-												id="inputHComienzo" placeholder="Hora de inicio"
-												title=""
-												required="">
+												type="text" th:field="*{horaComienzo}" name="horaComienzo" class="form-control"
+												id="inputHComienzo" placeholder="00:00 - 23:59"
+												title="hh:mm:ss"
+												pattern="([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?">
 										</div>
 										<div class="form-group">
-											<label for="inputHFin">Fecha</label> <input
-												type="time" th:field="*{horaFin}" name="horaFin" class="form-control"
-												id="inputHFin" placeholder="Hora fin"
-												title=""
-												required="">
-										</div-->
+											<label for="inputHFin">Hora Final</label> <input
+												type="text" th:field="*{horaFin}" name="horaFin" class="form-control"
+												id="inputHFin" placeholder="00:00 - 23:59"
+												title="hh:mm:ss"
+												pattern="([01]?[0-9]|2[0-3]):[0-5][0-9](:[0-5][0-9])?">
+										</div>
 										<div class="form-group">
 											<label for="inputParticipantes">Participantes</label> <input
 												type="number" th:field="*{participantes}" name="participantes" class="form-control"
@@ -79,7 +95,7 @@
 										<div class="form-group">
 											<label for="inputDescripcion">Descripcion</label> <textarea
 												 th:field="*{descripcion}" name="descripcion" class="form-control"
-												id="inputDescripcion" placeholder="Descripción"
+												id="inputDescripcion" placeholder="DescripciÃ³n"
 												title=""
 												required=""></textarea>
 										</div>
@@ -100,6 +116,11 @@
 			<!--/row-->
 		</div>
 		<!--/container-->
+		<script type="text/javascript">
+			$(function() {
+		    	$("#myform").validator();
+			});
+		</script>
 
 	</div>
 

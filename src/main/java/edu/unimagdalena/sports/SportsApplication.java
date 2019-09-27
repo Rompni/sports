@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import edu.unimagdalena.sports.entities.Mensaje;
 import edu.unimagdalena.sports.entities.Usuario;
 import edu.unimagdalena.sports.repositories.UsuarioRespository;
 

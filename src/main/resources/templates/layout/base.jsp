@@ -30,10 +30,22 @@
 	<!-- Cabecera -->
 	<header th:fragment="header(texto)">
 		<!-- As a heading -->
-			<nav class="navbar">
-				<span class="navbar-brand mb-0 h2" th:text="${texto}"></span>
-			</nav>
-	</header>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <span class="navbar-brand mb-0 h2" th:text="${texto}"></span>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="navbar-brand mb-0 h2"><a th:href="@{/home}" role="button"  class="btn btn-primary btn-sm active">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+</header>
+
 	<div class="wrapper">
 	
 	</div>

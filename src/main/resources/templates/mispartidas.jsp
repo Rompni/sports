@@ -4,15 +4,14 @@
 
 </head>
 <body>
-	<header th:replace="layout/base::header('Mis partida')"></header>
-
+	<header th:replace="layout/base::header('Mis partidas')"></header>
 	<div class="wrapper">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
-
+					
 					<div class="row">
-						<div class="col-md-6 mx-auto">
+						<div class="col-md-8 mx-auto">
 							<div class="card border-secondary">
 								<div class="card-header">
 									<h3 class="mb-0 my-2">Mis partidas</h3>
@@ -58,7 +57,7 @@
 					<!--/row-->
 					
 					<div class="row">
-						<div class="col-md-6 mx-auto">
+						<div class="col-md-8 mx-auto">
 							<div class="card border-secondary">
 								<div class="card-header">
 									<h3 class="mb-0 my-2">Partidas a la que me he unido</h3>
@@ -89,8 +88,8 @@
 												 	<td th:text="${partida.horaComienzo}"></td>
 												 	<td><span class="badge badge-pill badge-warning" th:text="${#sets.size(partida.usuariosParticipantes)+'/'+partida.participantes}"></span></td>
 												 	<!-- https://github.com/waylau/thymeleaf-tutorial/blob/master/docs/expression-utility-objects.md -->
-												 	 <td><a th:href="@{/eliminar-partida/{id}(id=${partida.id})}"  class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Eliminar</a></td>
-												 <td><a th:href="@{/buscar-partida/{id}(id=${partida.id})}"  class="btn btn-sm active" role="button" aria-pressed="true">+info</a></td>
+												 	 <td><a th:href="@{/eliminar/{id}(id=${partida.id})}"  class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Eliminar</a></td>
+												 <td><a th:href="@{/buscar-partida/{id}(id=${partida.id})}"  class="btn btn-info btn-sm active" role="button" aria-pressed="true">+info</a></td>
 												 </tr>
 											</tbody>
 										</table>

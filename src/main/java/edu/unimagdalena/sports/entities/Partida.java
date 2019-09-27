@@ -38,13 +38,16 @@ public class Partida implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date fecha;
+	
+
 	@Column
-	@Temporal(TemporalType.TIME)
-	@DateTimeFormat(iso = ISO.TIME)
-	private Date horaComienzo;
+	//@Temporal(TemporalType.TIME)
+	//@DateTimeFormat(iso = ISO.TIME)
+	private String horaComienzo;
+	
 	@Column
-	@DateTimeFormat(iso = ISO.TIME)
-	private Date horaFin;	
+	//@DateTimeFormat(iso = ISO.TIME)
+	private String horaFin;	
 	@Column
 	private Integer participantes;
 	@Column
@@ -98,16 +101,16 @@ public class Partida implements Serializable {
 	}
 	
 	
-	public Date getHoraComienzo() {
+	public String getHoraComienzo() {
 		return horaComienzo;
 	}
-	public void setHoraComienzo(Date horaComienzo) {
+	public void setHoraComienzo(String horaComienzo) {
 		this.horaComienzo = horaComienzo;
 	}
-	public Date getHoraFin() {
+	public String getHoraFin() {
 		return horaFin;
 	}
-	public void setHoraFin(Date horaFin) {
+	public void setHoraFin(String horaFin) {
 		this.horaFin = horaFin;
 	}
 	public Integer getParticipantes() {

@@ -42,4 +42,5 @@ public class PartidaServiceImp implements PartidaService {
 		return partidaRepository.findPartidaByDeporteOrCiudadOrProvincia(deporte, ciudad, dpto);
 	}
 
+
 }

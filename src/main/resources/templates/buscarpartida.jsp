@@ -5,25 +5,32 @@
 </head>
 <body>
 	<header th:replace="layout/base::header('Buscar partida')"></header>
+
 	<div class="wrapper">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12">
 					<div class="row">
-						<div class="col-md-6 mx-auto">
+						<div class="col-md-8 mx-auto">
 							<div class="card">
 								<div class="card-header">
 									<h3 class="mb-0 my-2">Buscar partidas</h3>
 								</div>
 								<div class="card-body">
 									<form th:action="@{/buscar-partidas}" method="post">
+																		
 										<div class="form-group row">
-											<label for="inputDeporte" class="col-sm-2 col-form-label">Deporte</label>
-											<div class="col-sm-10">
-												<input type="text" class="form-control" id="inputDeporte"
-													name="deporte" placeholder="Deporte">
+										  <label for="inputDeporte" class="col-sm-2 col-form-label">Deportes</label>
+										  <div class="col-sm-10">
+										  <select class="form-control" id="inputDeporte"  name="deporte" placeholder="Deportes" required >
+										    <option value="futbol">Futbol</option>
+										    <option value="Basquetball">Basketball</option>
+										    <option value="Beisbol">Beisbol</option>
+										    <option value="tenis">Tenis</option>
+										  </select>
 											</div>
 										</div>
+										
 										<div class="form-group row">
 											<label for="inputCiudad" class="col-sm-2 col-form-label">Ciudad</label>
 											<div class="col-sm-10">
@@ -51,7 +58,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6 mx-auto">
+				<div class="col-md-8 mx-auto">
 
 
 					<div class="card">
