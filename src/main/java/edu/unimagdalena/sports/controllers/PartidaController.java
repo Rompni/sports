@@ -88,6 +88,7 @@ public class PartidaController {
 		return "mispartidas";
 	}
 	
+	//eliminar participantes
 	@GetMapping("/eliminar/{id}")
 	public String eliminarParticipante (@PathVariable("id") Long id, Model model) {
 

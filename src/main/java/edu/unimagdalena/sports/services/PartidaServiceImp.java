@@ -15,7 +15,6 @@ public class PartidaServiceImp implements PartidaService {
 	@Autowired private PartidaRepository partidaRepository;
 	@Override
 	public List<Partida> buscarPartidasPorUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
 		String creador = usuario.getUsername();
 		return partidaRepository.findPartidasByCreador(creador);
 	}
